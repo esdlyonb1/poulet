@@ -1,6 +1,7 @@
 <?php
 $platsPoulet = [
-     [  "nom"=>"poulet basquaise",
+     [  "id"=>1,
+         "nom"=>"poulet basquaise",
         "type"=>"traditionnel",
         "cuisson"=> "four",
         "accompagnement"=> "legumes",
@@ -9,7 +10,8 @@ $platsPoulet = [
 
     ],
 
-    [  "nom"=>"poulet frites",
+    [    "id"=>2,
+        "nom"=>"poulet frites",
         "type"=>"traditionnel",
         "cuisson"=> "four",
         "accompagnement"=> "legumes",
@@ -20,7 +22,14 @@ $platsPoulet = [
 ];
 
 
+if(isset($_POST['idPoulet'])){
+    $id= $_POST['idPoulet'];
+    $content = afficheUnPlat($platsPoulet, $id);
 
-// ??? afficheUnPlat();
+}else{
+    $content = showCardsPoulet($platsPoulet);
 
- // $content = ???;
+}
+
+
+
